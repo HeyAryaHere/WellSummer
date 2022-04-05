@@ -6,5 +6,3 @@ Till now I have created a basic code and basic way to get output!
 
 
 See trying.py if you wanna see what feature I am trying out,
-
-My current 
