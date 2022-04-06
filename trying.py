@@ -1,29 +1,35 @@
 import random
 from tkinter import *
+from tkinter import messagebox
 from tkinter.messagebox import showinfo
+from distutils import text_file
 
-def main():
-    
-    def reply():
-        showinfo(title="popup")
-    from distutils import text_file
-    def automatic():
-        for x in range(21):
-            x = random.randint(1, 9)
-            y = random.randint(1, 9)
-            sing_list = ["+", "-"]
-            text_file=open("txt.py","w")
-            n = random.choice(sing_list)
-            text_file.write(f"{x}{n}{y}")
-            text_file.close()
-    window = Tk()
-    button = Button(window, text="Generate Automatically", command=main)
-    button.pack()
-    window.mainloop()
+class main():
+
+    def abc():
+        window = Tk()
+
+        def automatic():
+                text_file= open('output.txt','w')
+
+                for i in range(10):
+
+                    x = random.randint(1, 9)
+                    y = random.randint(0, 9)
+                    sing_list = ["+", "-"]
+                    
+                    if x  < y:
+                        text_file.write(f"\n{x}+{y}")
+                    else:
+                        s = random.choice(sing_list)
+                        text_file.write(f"{x}{s}{y}\n.")
+
+                text_file= open('output.txt','w')
+            
+        button = Button(window, text="Generate Automatically", command=automatic)
+        button.pack()
+        window.mainloop()
+
+    abc()
 
 main()
-
-'''
-def by_number():
-    print(input(str('What should be your first number?')))
-'''
